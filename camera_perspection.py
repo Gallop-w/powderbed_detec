@@ -32,6 +32,9 @@ img_dst = cv2.warpPerspective(img_origin, perspective_matrix, (width, height))
 # if cv2.waitKey(0)==27:
 #     cv2.destroyAllWindows()
 
-# 6.写入结果
+# 6.裁剪图片
+img_dst = img_dst[80:2370,680:2980]
+
+# 7.写入结果
 cv2.imwrite("./result_img/{}.png".format(img_path.split('.png')[0]+'cali'), img_dst)
 

@@ -56,7 +56,7 @@ mtx = np.array([[4.83953298e+03, 0.00000000e+00, 1.93548592e+03],
          [0.00000000e+00, 0.00000000e+00, 1.00000000e+00]])
 dist = np.array([[-9.65379370e-02,  1.30139024e-02,  3.14773426e-04,  1.63575383e-04,  2.60987251e+00]])
 
-img = cv2.imread("img_280-light/62-1.png")# images[3]
+img = cv2.imread("images_280/1-4.png")# images[3]
 h, w = img.shape[:2]
 newcameramtx, roi = cv2.getOptimalNewCameraMatrix(mtx,dist,(w,h),1,(w,h))#显示更大范围的图片（正常重映射之后会删掉一部分图像）
 print (newcameramtx)
