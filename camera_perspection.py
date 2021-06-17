@@ -2,10 +2,10 @@ import cv2
 import numpy as np
 from PIL import Image
 
-img_path = 'calibresult3.png'
+img_path = '1_0.jpeg'
 img = Image.open(img_path)
 img_rot = img.rotate(-1.50)
-# img_rot.save('64_rotate.png')
+# img_rot.save('1_0_rotate.png')
 
 img_origin = cv2.cvtColor(np.asarray(img_rot), cv2.COLOR_RGB2BGR)
 height, width = img_origin.shape[:2]
@@ -35,6 +35,9 @@ img_dst = cv2.warpPerspective(img_origin, perspective_matrix, (width, height))
 # 6.裁剪图片
 img_dst = img_dst[80:2370,680:2980]
 
-# 7.写入结果
-cv2.imwrite("./result_img/{}.png".format(img_path.split('.png')[0]+'cali'), img_dst)
+# 7.压缩图片
+img_dst = cv2.resize(img_dst,(1000,1000))
+
+# 8.写入结果
+cv2.imwrite("./result_img/resize{}.jpg".format(img_path.split('.png')[0]), img_dst)
 

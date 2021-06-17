@@ -1,7 +1,7 @@
 import cv2
 
 # 采样图片
-img = cv2.imread("../64_rotate.png")
+img = cv2.imread("../1_0_persp.jpg")
 
 
 # print img.shape
@@ -11,7 +11,7 @@ def on_EVENT_LBUTTONDOWN(event, x, y, flags, param):
         xy = "%d,%d" % (x, y)
         cv2.circle(img, (x, y), 1, (255, 0, 0), thickness=-1)
         cv2.putText(img, xy, (x, y), cv2.FONT_HERSHEY_PLAIN,
-                    5, (0, 0, 255), thickness=4)
+                    3, (0, 0, 255), thickness=4)
         cv2.imshow("image", img)
 
 height, width = img.shape[:2]
